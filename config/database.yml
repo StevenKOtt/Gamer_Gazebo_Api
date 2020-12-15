@@ -90,5 +90,5 @@ test:
 production:
   <<: *default
   database: gamer_gazebo_api_production
-  url: <%= ENV['MY_APP_DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
