@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  birthdate: 2020-12-15
+  pronoun: MyString
+  email: MyString
+  country: MyString
+  about_me: MyString
+  user: one
+
+two:
+  birthdate: 2020-12-15
+  pronoun: MyString
+  email: MyString
+  country: MyString
+  about_me: MyString
+  user: two
