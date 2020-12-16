@@ -89,6 +89,6 @@ test:
 #
 production:
   <<: *default
-  database: gamer_gazebo_api_production
+  # database: gamer_gazebo_api_production
   url: <%= ENV['DATABASE_URL'] %>
 
