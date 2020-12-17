@@ -148,7 +148,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  universal-darwin-19
+  ruby
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -167,4 +167,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.2.1
+   2.1.4
