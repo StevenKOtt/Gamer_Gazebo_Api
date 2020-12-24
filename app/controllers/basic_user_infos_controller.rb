@@ -48,6 +48,6 @@ class BasicUserInfosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def basic_user_info_params
-      params.require(:basic_user_info).permit(:birthdate, :pronoun, :email, :country, :about_me, :user_id)
+      params.require(:basic_user_info).permit(:birthdate, :pronoun, :username, :country, :about_me, :user_id)
     end
 end

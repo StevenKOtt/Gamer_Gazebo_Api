@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references: 
+  type: 
+  screenname: MyString
+  currently_playing: MyString
+
+two:
+  references: 
+  type: 
+  screenname: MyString
+  currently_playing: MyString

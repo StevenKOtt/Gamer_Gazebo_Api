@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :game_cards
   resources :basic_user_infos
   resource :users, only: [:create]
   post "/login", to: "users#login"
