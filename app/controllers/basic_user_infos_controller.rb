@@ -9,6 +9,11 @@ class BasicUserInfosController < ApplicationController
     render json: @basic_user_infos
   end
 
+  # GET /search/keyword
+  def search
+    @basic_user_infos = BasicUserInfo.where("lower(username) LIKE ?", "%#{params[:keyword].downcase}%")
+    render json: @basic_user_infos
+  end
   # GET /basic_user_infos/1
   def show
     render json: @basic_user_info
