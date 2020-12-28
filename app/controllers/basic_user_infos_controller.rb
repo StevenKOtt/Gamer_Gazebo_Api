@@ -20,7 +20,7 @@ class BasicUserInfosController < ApplicationController
   end
   # GET /basic_user_infos/1
   def show
-    image = rails_blob_path(@basic_user_info.image)
+    image = @basic_user_info.image.service_url
     render json: {birthdate: @basic_user_info.birthdate, pronoun: @basic_user_info.pronoun, username: @basic_user_info.username, country:@basic_user_info.country, about_me:@basic_user_info.about_me, user_id: @basic_user_info.user_id, image: image}
   end
 
