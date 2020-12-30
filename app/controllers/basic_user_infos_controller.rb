@@ -18,6 +18,21 @@ class BasicUserInfosController < ApplicationController
     end
     render json: @basic_user_infos
   end
+
+
+  # GET /followings
+def searchfollows 
+    @follows = get_follows
+    p @follows
+    @basic_user_infos = BasicUserInfo.all.with_attached_image.where(user_id: [@follows])
+    @basic_user_infos = @basic_user_infos.map do |aUser|
+      image = rails_blob_path(aUser.image)
+      {birthdate: aUser.birthdate, pronoun: aUser.pronoun, username: aUser.username, country:aUser.country, about_me:aUser.about_me, user_id: aUser.user_id, image: image}
+    end
+    render json: @basic_user_infos
+end
+
+
   # GET /basic_user_infos/1
   def show
     image = rails_blob_path(@basic_user_info.image)

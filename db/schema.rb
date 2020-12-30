@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_053639) do
+ActiveRecord::Schema.define(version: 2020_12_29_035139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 2020_12_28_053639) do
     t.index ["user_id"], name: "index_basic_user_infos_on_user_id"
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "following"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
   create_table "game_cards", force: :cascade do |t|
     t.string "product"
     t.string "screenname"
@@ -77,5 +85,6 @@ ActiveRecord::Schema.define(version: 2020_12_28_053639) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "basic_user_infos", "users"
+  add_foreign_key "follows", "users"
   add_foreign_key "game_cards", "users"
 end
